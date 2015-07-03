@@ -1,4 +1,4 @@
-# TBA
+# 0.1.0
 
 - Change `total` key to `total_items`
 

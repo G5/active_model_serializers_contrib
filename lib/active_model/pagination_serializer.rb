@@ -14,7 +14,7 @@ class ActiveModel::PaginationSerializer < ActiveModel::ArraySerializer
     opts[:meta] ||= {}
     opts[:meta][:current_page] = current_page
     opts[:meta][:total_pages] = total_pages
-    opts[:meta][:total] = total_objects
+    opts[:meta][:total_items] = total_objects
     opts[:meta][:prev_page] = prev_page
     opts[:meta][:next_page] = next_page
 

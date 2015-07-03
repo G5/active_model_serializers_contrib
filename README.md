@@ -30,7 +30,7 @@ You will get a response like this:
   "meta": {
     "current_page": 1,
     "total_pages": 4,
-    "total": 8,
+    "total_items": 8,
     "prev_page": null,
     "next_page": 2
   }

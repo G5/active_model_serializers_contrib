@@ -13,7 +13,7 @@ RSpec.describe "PaginationSerializer", type: :request do
       meta = hash[:meta]
       expect(meta[:current_page]).to eq 6
       expect(meta[:total_pages]).to eq 10
-      expect(meta[:total]).to eq 20
+      expect(meta[:total_items]).to eq 20
       expect(meta[:prev_page]).to eq 5
       expect(meta[:next_page]).to eq 7
     end
@@ -25,7 +25,7 @@ RSpec.describe "PaginationSerializer", type: :request do
         meta = hash[:meta]
         expect(meta[:current_page]).to eq 1
         expect(meta[:total_pages]).to eq 4
-        expect(meta[:total]).to eq 20
+        expect(meta[:total_items]).to eq 20
         expect(meta[:prev_page]).to eq nil
         expect(meta[:next_page]).to eq 2
       end
@@ -38,7 +38,7 @@ RSpec.describe "PaginationSerializer", type: :request do
         meta = hash[:meta]
         expect(meta[:current_page]).to eq 10
         expect(meta[:total_pages]).to eq 10
-        expect(meta[:total]).to eq 20
+        expect(meta[:total_items]).to eq 20
         expect(meta[:prev_page]).to eq 9
         expect(meta[:next_page]).to eq nil
       end
@@ -51,7 +51,7 @@ RSpec.describe "PaginationSerializer", type: :request do
         meta = hash[:meta]
         expect(meta[:current_page]).to eq 1
         expect(meta[:total_pages]).to eq 1
-        expect(meta[:total]).to eq 20
+        expect(meta[:total_items]).to eq 20
         expect(meta[:prev_page]).to eq nil
         expect(meta[:next_page]).to eq nil
       end
@@ -65,7 +65,7 @@ RSpec.describe "PaginationSerializer", type: :request do
       meta = hash[:meta]
       expect(meta[:current_page]).to eq 1
       expect(meta[:total_pages]).to eq 1
-      expect(meta[:total]).to eq 0
+      expect(meta[:total_items]).to eq 0
       expect(meta[:prev_page]).to eq nil
       expect(meta[:next_page]).to eq nil
     end

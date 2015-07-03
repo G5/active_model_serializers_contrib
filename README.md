@@ -23,16 +23,16 @@ You will get a response like this:
 
 ```json
 {
-  books: [
-    { id: 1, name: "The Great Voyage" },
-    ...
+  "books": [
+    { "id": 1, "name": "The Great Voyage" },
+    { "id": 2, "name": "The Great Voyage part 2" }
   ],
-  meta: {
-    current_page: 1,
-    total_pages: 4,
-    total: 40,
-    prev_page: nil,
-    next_page: 2
+  "meta": {
+    "current_page": 1,
+    "total_pages": 4,
+    "total_items": 8,
+    "prev_page": null,
+    "next_page": 2
   }
 }
 ```

@@ -8,11 +8,11 @@ RSpec.describe "PaginationSerializer", type: :request do
     end
 
     it "contains pagination information" do
-      get "/books", page: 6, per_page: 2, format: :json
+      get "/books", page: 6, per_page: 3, format: :json
       hash = JSON.parse(response.body).with_indifferent_access
       meta = hash[:meta]
       expect(meta[:current_page]).to eq 6
-      expect(meta[:total_pages]).to eq 10
+      expect(meta[:total_pages]).to eq 7
       expect(meta[:total_items]).to eq 20
       expect(meta[:prev_page]).to eq 5
       expect(meta[:next_page]).to eq 7

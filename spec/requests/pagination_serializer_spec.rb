@@ -56,6 +56,19 @@ RSpec.describe "PaginationSerializer", type: :request do
         expect(meta[:next_page]).to eq nil
       end
     end
+
+    context "there are multiple fields to count" do
+      it "does not blow up" do
+        get "/books/multiple_fields_to_count", format: :json
+        hash = JSON.parse(response.body).with_indifferent_access
+        meta = hash[:meta]
+        expect(meta[:current_page]).to eq 1
+        expect(meta[:total_pages]).to eq 1
+        expect(meta[:total_items]).to eq 20
+        expect(meta[:prev_page]).to eq nil
+        expect(meta[:next_page]).to eq nil
+      end
+    end
   end
 
   context "there are no books" do

@@ -12,4 +12,10 @@ class BooksController < ApplicationController
     respond_with books, serializer: ActiveModel::PaginationSerializer
   end
 
+  def multiple_fields_to_count
+    books = Book.select("title, created_at").all
+
+    respond_with books, serializer: ActiveModel::PaginationSerializer
+  end
+
 end

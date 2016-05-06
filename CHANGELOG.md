@@ -1,3 +1,7 @@
+# TBA
+
+- include `per_page` in meta
+
 # 0.1.1
 
 - Fix bug where page count was incorrect

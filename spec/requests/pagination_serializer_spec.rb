@@ -16,6 +16,7 @@ RSpec.describe "PaginationSerializer", type: :request do
       expect(meta[:total_items]).to eq 20
       expect(meta[:prev_page]).to eq 5
       expect(meta[:next_page]).to eq 7
+      expect(meta[:per_page]).to eq 3
     end
 
     context "on the first page" do
@@ -54,6 +55,7 @@ RSpec.describe "PaginationSerializer", type: :request do
         expect(meta[:total_items]).to eq 20
         expect(meta[:prev_page]).to eq nil
         expect(meta[:next_page]).to eq nil
+        expect(meta[:per_page]).to eq nil
       end
     end
 

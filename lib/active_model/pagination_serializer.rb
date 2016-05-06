@@ -17,6 +17,7 @@ class ActiveModel::PaginationSerializer < ActiveModel::ArraySerializer
     opts[:meta][:total_items] = total_items
     opts[:meta][:prev_page] = prev_page
     opts[:meta][:next_page] = next_page
+    opts[:meta][:per_page] = per_page
 
     initialize_without_pagination(object, opts)
   end

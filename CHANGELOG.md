@@ -1,4 +1,4 @@
-# TBA
+# 0.2.0
 
 - include `per_page` in meta
 

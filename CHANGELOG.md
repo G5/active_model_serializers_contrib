@@ -1,3 +1,7 @@
+# 0.2.1
+
+- Fix bug where a passing a grouped relation to PaginationSerializer results in an error
+
 # 0.2.0
 
 - include `per_page` in meta

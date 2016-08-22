@@ -4,7 +4,7 @@ class ActiveModel::PaginationSerializer < ActiveModel::ArraySerializer
     per_page = object.limit_value
     offset = object.offset_value
     current_page = offset ? (offset / per_page) + 1 : 1
-    total_items = object.limit(nil).offset(nil).count(:all)
+    total_items = item_count(object)
     total_pages = per_page ? (total_items / per_page.to_f).ceil : 1
     prev_page = current_page - 1
     prev_page = nil if prev_page < 1
@@ -23,5 +23,13 @@ class ActiveModel::PaginationSerializer < ActiveModel::ArraySerializer
   end
 
   alias_method_chain :initialize, :pagination
+
+  private
+
+  def item_count(object)
+    initial_count = object.limit(nil).offset(nil).count(:all)
+
+    (initial_count.respond_to? :count) ? initial_count.count : initial_count
+  end
 
 end

@@ -18,4 +18,10 @@ class BooksController < ApplicationController
     respond_with books, serializer: ActiveModel::PaginationSerializer
   end
 
+  def grouped
+    books = Book.page(params[:page]).per(params[:per_page]).group(:id)
+
+    respond_with books, serializer: ActiveModel::PaginationSerializer
+  end
+
 end

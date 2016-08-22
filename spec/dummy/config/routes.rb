@@ -3,6 +3,7 @@ Rails.application.routes.draw do
     collection do
       get 'no_pagination'
       get 'multiple_fields_to_count'
+      get 'grouped'
     end
   end
   # The priority is based upon order of creation: first created -> highest priority.

@@ -71,6 +71,20 @@ RSpec.describe "PaginationSerializer", type: :request do
         expect(meta[:next_page]).to eq nil
       end
     end
+
+    context "relation is grouped" do
+      it "does not blow up" do
+        get "/books/grouped", page: 10, per_page: 2, format: :json
+        hash = JSON.parse(response.body).with_indifferent_access
+        meta = hash[:meta]
+        expect(meta[:current_page]).to eq 10
+        expect(meta[:total_pages]).to eq 10
+        expect(meta[:total_items]).to eq 20
+        expect(meta[:prev_page]).to eq 9
+        expect(meta[:next_page]).to eq nil
+        expect(meta[:per_page]).to eq 2
+      end
+    end
   end
 
   context "there are no books" do

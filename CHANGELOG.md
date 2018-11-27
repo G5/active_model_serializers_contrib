@@ -1,3 +1,8 @@
+# [TBA]
+
+- Make gem Rails 5 compatible.
+- Remove #alias_method_chain
+
 # 0.2.1
 
 - Fix bug where a passing a grouped relation to PaginationSerializer results in an error

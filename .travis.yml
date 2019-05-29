@@ -1,0 +1,8 @@
+language: ruby
+rvm:
+  - 2.3.7
+cache: bundler
+before_script:
+  - cd spec/dummy && bundle exec rake db:create db:migrate db:test:prepare
+script: cd ../../ && bundle exec rspec
+sudo: false

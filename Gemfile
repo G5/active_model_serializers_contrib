@@ -14,3 +14,6 @@ gemspec
 # gem 'byebug', group: [:development, :test]
 
 gem "pry"
+gem "active_model_serializers", "0.9.7"
+gem "rails", "~> 4.2.3"
+gem "sqlite3", "~> 1.3.6"

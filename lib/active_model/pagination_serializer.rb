@@ -22,7 +22,8 @@ class ActiveModel::PaginationSerializer < ActiveModel::ArraySerializer
     initialize_without_pagination(object, opts)
   end
 
-  alias_method_chain :initialize, :pagination
+  alias_method :initialize_without_pagination, :initialize
+  alias_method :initialize, :initialize_with_pagination
 
   private
 

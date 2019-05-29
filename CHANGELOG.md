@@ -1,4 +1,4 @@
-# [TBA]
+# 0.3.0
 
 - Make gem Rails 5 compatible.
 - Remove #alias_method_chain
